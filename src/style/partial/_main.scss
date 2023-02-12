@@ -1,0 +1,101 @@
+.page_wrap {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    .settings {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 50px;
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            max-width: 300px;
+            margin-right: 20px;
+            input {
+                width: 100%;
+            }
+        }
+    }
+    .graph {
+        width: 100%;
+        max-width: 600px;
+        @media screen and (min-width: 500px) and (max-width: 700px) {
+            // height: 600px;
+            transform: rotate(-90deg) translate(-160px, 0);
+        }
+        @media screen and (min-width: 400px) and (max-width: 499px) {
+            transform: rotate(-90deg) translate(-85px, 0);
+        }
+        @media screen and (max-width: 399px) {
+            transform: rotate(-90deg) translate(-45px, 0);
+        }
+        .graph_bars {
+            position: relative;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 30%;
+                width: 3px;
+                height: 100%;
+                background-color: black;
+            }
+            .graph_bar {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                padding: 10px 0;
+                @media screen and (max-width: 700px) {
+                    height: 80px;
+                }
+                .label {
+                    // display: flex;
+                    // flex-direction: column;
+                    // align-items: flex-start;
+                    width: 30%;
+                    @media screen and (max-width: 700px) {
+                        transform: rotate(90deg);
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        text-align: center;
+                    }
+                    span {
+                        display: block;
+                        width: 100%;
+                    }
+                    .radio-group {
+                        float: left;
+                        display: flex;
+                        align-items: center;
+                        padding: 3px 0;
+                        margin-right: 5px;
+                        label {
+                            margin-right: 3px;
+                        }
+                    }
+                }
+                .bar {
+                    width: 65%;
+                    height: 10px;
+                    margin: 5px 0;
+                    border: 1px solid black;
+                    .line {
+                        height: 100%;
+                        background-color: gray;
+                    }                
+                }
+                .value {
+                    width: 5%;
+                    text-align: center;
+                    @media screen and (max-width: 700px) {
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+        }
+    }
+}
